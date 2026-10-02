@@ -101,3 +101,21 @@ if (age < 13) {console.log("Ticket Price: $8")}
 else if (age >= 13 && age <= 64) {console.log("Ticket Price: $12")}
 else if (age > 64) {console.log("Ticket Price: $7")}
 else console.log("Age Value Error - Check Input")
+
+/* 
+	? Ternaries
+	* a different way of writing conditionals
+	* expression based (no return)
+	* always need an else, no exceptions
+	* commonly used for quick checks
+	
+	? Syntax: conditional ? truthy code block : falsey code block
+*/
+
+let f1Team = "Sauber"
+
+if (f1Team === "Petronas") {
+	console.log("Toto Wolff")
+}
+
+f1Team === "Petronas" ? console.log("Toto Wolff") : null
