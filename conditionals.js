@@ -14,16 +14,16 @@
 	* if (expression) { code block where we do something }
 */
 
-let temp = 36
+let temp = 36;
 
 // expression true, we execute code block
 if (temp > 30) {
-	console.log("Summer weather")
+  console.log("Summer weather");
 }
 
 // expression false, we don't execude code block
 if (temp < 20) {
-	console.log("Autumn weather")
+  console.log("Autumn weather");
 }
 
 /* 
@@ -38,17 +38,17 @@ if (temp < 20) {
     * else must always be last in the chain
 */
 
-let tempScale = 2555
+let tempScale = 2555;
 
 if (tempScale === "F") {
-	console.log("Fahrenheit")
+  console.log("Fahrenheit");
 } else if (tempScale === "C") {
-	console.log("Celsius")
+  console.log("Celsius");
 } else {
-	console.log(`The value is ${tempScale}`)
+  console.log(`The value is ${tempScale}`);
 }
 
-temp = 10
+temp = 10;
 
 /* 
 	? Why should we chain? Can't I just throw bunch of ifs?
@@ -56,19 +56,19 @@ temp = 10
 */
 
 if (temp > 30) {
-	console.log("Hot")
+  console.log("Hot");
 }
 
 if (temp < 25) {
-	console.log("Pleasant")
+  console.log("Pleasant");
 }
 
 if (temp < 20) {
-	console.log("Cooling off")
+  console.log("Cooling off");
 }
 
 if (temp < 15) {
-	console.log("Winter is coming")
+  console.log("Winter is coming");
 }
 
 /* 
@@ -86,21 +86,24 @@ if (temp < 15) {
 		* either side must be true for whole express to be true
 */
 
-temp = 25
-tempScale = "C"
+temp = 25;
+tempScale = "C";
 
 if (tempScale === "C" && temp >= 30) {
-	console.log("hot summer day")
+  console.log("hot summer day");
 } else if (tempScale === "F" && temp >= 30) {
-	console.log("winter is here")
+  console.log("winter is here");
 }
 
-let age = 64.0
+let age = 64.0;
 
-if (age < 13) {console.log("Ticket Price: $8")}
-else if (age >= 13 && age <= 64) {console.log("Ticket Price: $12")}
-else if (age > 64) {console.log("Ticket Price: $7")}
-else console.log("Age Value Error - Check Input")
+if (age < 13) {
+  console.log("Ticket Price: $8");
+} else if (age >= 13 && age <= 64) {
+  console.log("Ticket Price: $12");
+} else if (age > 64) {
+  console.log("Ticket Price: $7");
+} else console.log("Age Value Error - Check Input");
 
 /* 
 	? Ternaries
@@ -112,10 +115,81 @@ else console.log("Age Value Error - Check Input")
 	? Syntax: conditional ? truthy code block : falsey code block
 */
 
-let f1Team = "Sauber"
+let f1Team = "Aston Martin";
 
 if (f1Team === "Petronas") {
-	console.log("Toto Wolff")
+  console.log("Toto Wolff");
 }
 
-f1Team === "Petronas" ? console.log("Toto Wolff") : null
+f1Team === "Petronas" ? console.log("Toto Wolff") : null;
+
+// ? Ternary Chaining (not recommended)
+
+f1Team === "Petronas"
+  ? console.log("Toto Wolff")
+  : f1Team === "Red Bull"
+    ? console.log("Laurent Mekkies")
+    : f1Team == "Aston Martin"
+      ? console.log("Adrian Newey")
+      : console.log("We don't have this team");
+
+/* 
+	? Switch Statements
+	* a way to execute multiple expression with or without stop
+*/
+
+let teamPrincipal = "Zac Brown";
+
+switch (teamPrincipal) {
+  // ? what you're comparing against
+  case "Fred Vasseur":
+    // ? condition to run
+    console.log("Ferrari principal");
+    break; // ? stops other cases from evaluating
+  case "Zac Brown":
+    console.log("McLaren Team Principal");
+    break;
+  case "Guenther Steiner":
+    console.log("Funniest team principal");
+    break;
+  default:
+    // ? equivalent of an else
+    console.log("Not someone we know");
+}
+
+/* 
+	? Challenge
+	* create a shipping status checker
+	* create a variable called status containing one of the following
+		* pending
+		* shipped
+		* cancelled
+		* delivered
+	* use a switch statement or a ternary to print appropriate message
+		* Your order is being prepared
+		* Your order is on its way
+		* Your order has been delivered
+		* Your order was cancelled
+		* Uknown order status
+*/
+
+let orderStatus = "pending";
+
+switch (orderStatus) {
+  case "pending":
+    console.log("Your order is being prepared");
+    break;
+  case "shipped":
+    console.log("Your order is on its way");
+    break;
+  case "cancelled":
+    console.log("Your order was cancelled");
+    break;
+  case "delivered":
+    console.log("Your order has been delivered");
+    break;
+  case "pending":
+    console.log("Your order is being prepared");
+  default:
+    console.log("Unknown order status");
+}

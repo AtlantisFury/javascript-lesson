@@ -23,21 +23,21 @@
 	* strings are indexable (can access indivdiual character)
 */
 
-let fullName ="Kenny T"
-console.log(fullName)
+let fullName = "Kenny T";
+console.log(fullName);
 
 // can access index with []
 // ! indexes start at zero (0)
-console.log(fullName[2])
-console.log(fullName[7]) // index out of bounds (only throws undefined here)
+console.log(fullName[2]);
+console.log(fullName[7]); // index out of bounds (only throws undefined here)
 
 // strings are immutable
-fullName[0] = "P"
-console.log(fullName)
+fullName[0] = "P";
+console.log(fullName);
 
 // this doesn't mutate the string, it replaces string inside the variable
-fullName = "Penny T"
-console.log(fullName)
+fullName = "Penny T";
+console.log(fullName);
 
 /* 
 	? String Methods
@@ -56,15 +56,15 @@ console.log(fullName.slice(2));
 	* process of building a big string from many sub strings
 */
 
-let cohortName = "fullstack"
-let cohortNumber = "12"
+let cohortName = "fullstack";
+let cohortNumber = "12";
 
 // ! NOT string concatenation - just multiple arguments passed into console log
-console.log(cohortName, cohortNumber, fullName)
-console.log(cohortName + " " + cohortNumber + " " + fullName)
+console.log(cohortName, cohortNumber, fullName);
+console.log(cohortName + " " + cohortNumber + " " + fullName);
 
-let student1 = cohortName + " " + cohortNumber + " " + fullName
-console.log(student1)
+let student1 = cohortName + " " + cohortNumber + " " + fullName;
+console.log(student1);
 
 /* 
 	? String Interpolation
@@ -73,8 +73,8 @@ console.log(student1)
 	* syntax: backticks `${ yourExpressionHERE } your string here`
 */
 
-let student1StringInterpolation = `Student: ${cohortName}-${cohortNumber} ${fullName}`
-console.log(student1StringInterpolation)
+let student1StringInterpolation = `Student: ${cohortName}-${cohortNumber} ${fullName}`;
+console.log(student1StringInterpolation);
 
 /* 
 	? Challenge
@@ -90,34 +90,34 @@ console.log(student1StringInterpolation)
 	! Spicey Mode - how would you have it console name, street, city + zip each on new line?
 */
 
-let firstName = "Andrew"
-let lastName = "Pike"
-let street = "210 Main Road"
-let city = "Joe Batt's Arm"
-let zip = "A0G 2X0"
+let firstName = "Andrew";
+let lastName = "Pike";
+let street = "210 Main Road";
+let city = "Joe Batt's Arm";
+let zip = "A0G 2X0";
 
 // \n is a line escape character
-let signature = `${firstName} ${lastName}\n${street}\n${city} ${zip}`
-console.log(signature)
+let signature = `${firstName} ${lastName}\n${street}\n${city} ${zip}`;
+console.log(signature);
 
 /* 
 	? Numbers
 	* any integer, float, decimal, blah blah numbers
 */
 
-let age = 25
-console.log(age)
+let age = 25;
+console.log(age);
 
-let bac = 0.08
-console.log(bac)
+let bac = 0.08;
+console.log(bac);
 
-console.log(age + bac)
+console.log(age + bac);
 
 /* 
 	? Checking Data Type
 */
 
-console.log(typeof age, typeof signature)
+console.log(typeof age, typeof signature);
 
 /* 
 	? Boolean
@@ -137,9 +137,9 @@ console.log(typeof age, typeof signature)
 
 // ? How to check for a boolean value?
 
-console.log(Boolean(NaN))
-console.log(Boolean(""))
-console.log(Boolean(" "))
+console.log(Boolean(NaN));
+console.log(Boolean(""));
+console.log(Boolean(" "));
 
 // ! Booleans are important for decision making
 
@@ -149,7 +149,7 @@ console.log(Boolean(" "))
     * undefined - we haven't got a clue, can be anything
 */
 
-let certificateID = null
+let certificateID = null;
 
 /* 
 	? Operators
@@ -169,8 +169,8 @@ let certificateID = null
 	* !== strict not equal to
 */
 
-console.log(5 ** 5)
-console.log(5 == 5)
+console.log(5 ** 5);
+console.log(5 == 5);
 
 /* 
 	? Type Coercion
@@ -179,23 +179,23 @@ console.log(5 == 5)
 	* JS will try to coerce data type if there's a mismatch
 */
 
-console.log(2 + "2")
+console.log(2 + "2");
 // JS takes the number 2 and turns it into a string
 // it becomes string concatenation
 
-console.log(5 == "5") // true because number 5 gets turned into a string
+console.log(5 == "5"); // true because number 5 gets turned into a string
 
-console.log(2 + true) // 3 because boolean of true is 1
+console.log(2 + true); // 3 because boolean of true is 1
 
-console.log("stuff" + undefined) // turns undefined into string representation
+console.log("stuff" + undefined); // turns undefined into string representation
 
 // ! HAAALP!!! HOW DO I STOP THIS COERCION WITCHCRAFT?!?!?!?
 
 // ? triple equals === checks for value AND data type
 
-console.log(5 === "5")
+console.log(5 === "5");
 
-console.log(2 == "2")
+console.log(2 == "2");
 
 /* 
 	? Expression
