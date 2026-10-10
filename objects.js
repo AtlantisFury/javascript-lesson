@@ -101,13 +101,97 @@ let db = [
 	* log that "this account already exists"
 */
 
-function login(db, request) {
-  const user = db.find(
-    (user) =>
-      user.email.trim().toLowerCase() === request.email.trim().toLowerCase(),
- if ((user === undefined, console.log("User Not Found")));  
-);
+console.log(POSTrequest.password);
+db.forEach((i) => console.log(i.email));
+
+/* 
+	? Guard Clauses
+	* think about the negative scenario
+	* use early returns (return or return false) to short
+*/
+
+function validateEmail(email) {
+  if (typeof email !== "string" || email.trim() === "") {
+    console.log("Email required");
+    return;
+  }
+
+  let normalizedEmail = email.trim().toLowerCase();
+
+  return normalizedEmail;
 }
-// if ((user === null, console.log("User Not Found")));
-let loginresult = login(db, POSTrequest);
-console.log(loginresult);
+
+function validatePassword(password) {
+  if (typeof password !== "string" || password.trim() === "") {
+    console.log("Password required");
+    return;
+  }
+
+  return password;
+}
+
+function findUserByEmail(email) {
+  return db.find((usr) => usr.email.trim().toLowerCase() === email);
+}
+
+function login(req) {
+  let email = validateEmail(req.email);
+  let password = validatePassword(req.password);
+
+  if (!email && !password) {
+    return;
+  }
+
+  let user = findUserByEmail(email);
+  console.log(user);
+
+  if (!user) {
+    console.log("User Not Found");
+    return;
+  }
+
+  console.log("Logged in");
+}
+
+login(POSTrequest);
+
+function register(req) {
+  let email = validateEmail(req.email);
+  let password = validatePassword(req.password);
+
+  if (!email && !password) {
+    return;
+  }
+
+  let user = findUserByEmail(email);
+
+  if (user) {
+    console.log("User already exists");
+    return;
+  }
+
+  db.push({ email, password });
+  console.log("Account created");
+}
+
+register(POSTrequest);
+console.log(db);
+
+function authenticate(req, db) {
+  let foundUser = db.find((usr) => usr.email === req.email);
+  console.log(foundUser);
+
+  if (!foundUser) {
+    console.log("User not found");
+    return;
+  }
+
+  if (foundUser[0].password !== req.password) {
+    console.log("Incorrect password");
+    return;
+  }
+
+  console.log("Logged in");
+}
+
+// authenticate(POSTrequest, db)

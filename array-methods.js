@@ -236,6 +236,22 @@ let dirtyUsernames = ["PAUL", "aDAM", "JACKson", "HAmza"];
 	! Spicey - make it so it starts uppercase and rest is lowercase
 */
 
-let cleanNames = dirtyUsernames.forEach((item, index) => {
-  console.log(`${item.toWellFormed()}`);
-});
+let normalizedUsernames = dirtyUsernames.map(
+  (n) => n.charAt(0).toUpperCase() + n.slice(1).toLowerCase(),
+);
+console.log(normalizedUsernames);
+
+/* 
+	? reduce()
+	* helps calculate data
+	* reducer and an accumulator
+	* start value and current value added
+*/
+
+let responseTimes = [120, 85, 240, 110, 95];
+
+let total = responseTimes.reduce((total, time) => {
+  return total + time;
+}, 0);
+
+console.log(total);
